@@ -3,56 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Game Controller</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { touch-action: none; user-select: none; -webkit-user-select: none; }
-        .btn { 
-            touch-action: none; 
-            transition: all 0.1s;
-            -webkit-tap-highlight-color: transparent;
-        }
-        .btn:active { transform: scale(0.9); opacity: 0.7; }
-        .dpad-btn { width: 80px; height: 80px; }
-        .action-btn { width: 90px; height: 90px; }
-    </style>
+    <title>RetroG Remote</title>
+    <link rel="stylesheet" href="css/controller.css">
 </head>
-<body class="bg-gray-900 text-white overflow-hidden">
-    <div class="min-h-screen flex flex-col">
-        <div class="bg-gray-800 p-4 text-center">
-            <div id="status" class="text-xl font-bold">Connecting...</div>
-            <div id="player-info" class="text-sm text-gray-400 mt-1"></div>
+<body>
+    <div class="controller-app">
+        <div class="status-bar">
+            <div id="status" class="status">Connecting...</div>
+            <div id="mode-indicator" class="mode-indicator">UI Mode</div>
         </div>
 
-        <div class="flex-1 flex flex-col justify-around p-6">
-            <div class="flex justify-center gap-8">
-                <button class="btn px-8 py-3 bg-gray-700 rounded-full text-sm font-bold" data-button="select">SELECT</button>
-                <button class="btn px-8 py-3 bg-gray-700 rounded-full text-sm font-bold" data-button="start">START</button>
-            </div>
+        <div class="mode-switcher">
+            <button id="ui-mode-btn" class="mode-btn active">UI Control</button>
+            <button id="game-mode-btn" class="mode-btn">Game Control</button>
+        </div>
 
-            <div class="flex justify-between items-center">
-                <div class="relative w-64 h-64">
-                    <button class="btn dpad-btn absolute top-0 left-1/2 -translate-x-1/2 bg-gray-700 rounded-lg flex items-center justify-center text-2xl font-bold" data-button="up">▲</button>
-                    <button class="btn dpad-btn absolute bottom-0 left-1/2 -translate-x-1/2 bg-gray-700 rounded-lg flex items-center justify-center text-2xl font-bold" data-button="down">▼</button>
-                    <button class="btn dpad-btn absolute left-0 top-1/2 -translate-y-1/2 bg-gray-700 rounded-lg flex items-center justify-center text-2xl font-bold" data-button="left">◀</button>
-                    <button class="btn dpad-btn absolute right-0 top-1/2 -translate-y-1/2 bg-gray-700 rounded-lg flex items-center justify-center text-2xl font-bold" data-button="right">▶</button>
-                </div>
-
-                <div class="relative w-64 h-64">
-                    <button class="btn action-btn absolute top-0 left-1/2 -translate-x-1/2 bg-yellow-600 rounded-full flex items-center justify-center text-2xl font-bold" data-button="x">X</button>
-                    <button class="btn action-btn absolute bottom-0 left-1/2 -translate-x-1/2 bg-blue-600 rounded-full flex items-center justify-center text-2xl font-bold" data-button="b">B</button>
-                    <button class="btn action-btn absolute left-0 top-1/2 -translate-y-1/2 bg-green-600 rounded-full flex items-center justify-center text-2xl font-bold" data-button="y">Y</button>
-                    <button class="btn action-btn absolute right-0 top-1/2 -translate-y-1/2 bg-red-600 rounded-full flex items-center justify-center text-2xl font-bold" data-button="a">A</button>
+        <div id="ui-controller" class="controller-layout">
+            <div class="control-section">
+                <div class="dpad">
+                    <button class="dpad-btn dpad-up" data-ui="up">▲</button>
+                    <button class="dpad-btn dpad-down" data-ui="down">▼</button>
+                    <button class="dpad-btn dpad-left" data-ui="left">◀</button>
+                    <button class="dpad-btn dpad-right" data-ui="right">▶</button>
+                    <div class="dpad-center"></div>
                 </div>
             </div>
 
-            <div class="flex justify-between px-4">
-                <button class="btn px-12 py-4 bg-gray-700 rounded-lg text-xl font-bold" data-button="l">L</button>
-                <button class="btn px-12 py-4 bg-gray-700 rounded-lg text-xl font-bold" data-button="r">R</button>
+            <div class="center-buttons">
+                <button class="action-btn btn-select" data-ui="select">SELECT</button>
+                <button class="action-btn btn-back" data-ui="back">BACK</button>
             </div>
+        </div>
+
+        <div id="game-controller" class="controller-layout hidden">
+            <div class="control-section">
+                <div class="dpad">
+                    <button class="dpad-btn dpad-up" data-button="up">▲</button>
+                    <button class="dpad-btn dpad-down" data-button="down">▼</button>
+                    <button class="dpad-btn dpad-left" data-button="left">◀</button>
+                    <button class="dpad-btn dpad-right" data-button="right">▶</button>
+                    <div class="dpad-center"></div>
+                </div>
+            </div>
+
+            <div class="center-buttons">
+                <button class="util-btn" data-button="select">SELECT</button>
+                <button class="util-btn" data-button="start">START</button>
+            </div>
+
+            <div class="control-section">
+                <div class="action-buttons">
+                    <button class="action-btn btn-x" data-button="x">X</button>
+                    <button class="action-btn btn-y" data-button="y">Y</button>
+                    <button class="action-btn btn-a" data-button="a">A</button>
+                    <button class="action-btn btn-b" data-button="b">B</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="shoulder-buttons">
+            <button class="shoulder-btn" data-button="l">L</button>
+            <button class="shoulder-btn" data-button="r">R</button>
         </div>
     </div>
 
-    <script type="module" src="controller.js"></script>
+    <script type="module" src="js/controller-app.js"></script>
 </body>
 </html>
