@@ -66,9 +66,9 @@ class TVConsole {
         card.classList.add('focused');
         
         const consoleId = card.dataset.console;
-        const gameId = parseInt(card.dataset.gameId);
         const console = this.games.consoles.find(c => c.id === consoleId);
-        const game = console.games[gameId];
+        const gameName = card.querySelector('.game-card-title').textContent;
+        const game = console.games.find(g => g.name === gameName);
         
         this.showGameDetails(game, console);
     }

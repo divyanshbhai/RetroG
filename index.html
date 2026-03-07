@@ -3,48 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retro Gaming Console</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { background: #0a0a0a; overflow-x: hidden; }
-        .console-row { scroll-behavior: smooth; }
-        .game-card { transition: transform 0.2s; }
-        .game-card:hover { transform: scale(1.05); }
-        #emulator-container { display: none; }
-        #emulator-container.active { display: block; }
-    </style>
+    <title>RetroG Console</title>
+    <link rel="stylesheet" href="css/console.css">
 </head>
-<body class="text-white font-sans">
-    <div id="console-ui" class="min-h-screen p-8">
-        <h1 class="text-6xl font-bold mb-12 text-center bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
-            Retro Gaming Console
-        </h1>
-        <div id="console-categories"></div>
-    </div>
-
-    <div id="emulator-container" class="fixed inset-0 bg-black z-50">
-        <div class="flex h-full">
-            <div class="flex-1 flex items-center justify-center">
-                <div id="game"></div>
-            </div>
-            <div class="w-80 bg-gray-900 p-6 flex flex-col">
-                <button id="exit-game" class="mb-6 px-6 py-3 bg-red-600 hover:bg-red-700 rounded-lg text-xl font-bold">
-                    Exit Game
-                </button>
-                <div class="mb-6">
-                    <h3 class="text-2xl font-bold mb-4">Scan to Connect Controller</h3>
-                    <div id="qr-code" class="bg-white p-4 rounded-lg"></div>
+<body>
+    <div id="app">
+        <div id="dashboard" class="dashboard">
+            <div class="header">
+                <h1 class="logo">RetroG</h1>
+                <div class="user-info">
+                    <span id="time"></span>
                 </div>
-                <div class="flex-1">
-                    <h3 class="text-xl font-bold mb-4">Connected Players</h3>
-                    <div id="players-list" class="space-y-2"></div>
+            </div>
+            <div id="content" class="content"></div>
+            <div id="details-panel" class="details-panel">
+                <div class="details-content">
+                    <h2 id="game-title"></h2>
+                    <div id="game-meta" class="game-meta"></div>
+                    <p id="game-desc" class="game-desc"></p>
+                    <button id="play-btn" class="play-btn">▶ Play Game</button>
+                </div>
+            </div>
+        </div>
+        <div id="emulator-screen" class="emulator-screen hidden">
+            <div class="emulator-container">
+                <div id="game-canvas"></div>
+            </div>
+            <div class="emulator-sidebar">
+                <button id="exit-btn" class="exit-btn">✕ Exit</button>
+                <div class="qr-section">
+                    <h3>Connect Controller</h3>
+                    <div id="qr-code"></div>
+                    <p class="qr-hint">Scan with phone</p>
+                </div>
+                <div class="players-section">
+                    <h3>Players</h3>
+                    <div id="players-list"></div>
                 </div>
             </div>
         </div>
     </div>
 
+    <link rel="stylesheet" href="css/console.css">
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/emulatorjs@latest/data/loader.js"></script>
-    <script type="module" src="tv.js"></script>
+    <script type="module" src="js/tv-app.js"></script>
 </body>
 </html>
