@@ -8,7 +8,7 @@
       "games": [
         {
           "name": "Super Mario Bros",
-          "rom": "roms/nes/mario.nes",
+          "rom": "roms/nes/Super Mario Bros 16.nes",
           "image": "assets/images/nes-mario.jpg",
           "description": "The legendary platformer that started it all. Guide Mario through the Mushroom Kingdom to rescue Princess Peach from Bowser.",
           "year": 1985,
