@@ -9,12 +9,10 @@
         {
           "name": "Super Mario Bros",
           "rom": "roms/nes/mario.nes",
-          "image": "assets/covers/nes-mario.jpg"
-        },
-        {
-          "name": "Contra",
-          "rom": "roms/nes/contra.nes",
-          "image": "assets/covers/nes-contra.jpg"
+          "image": "assets/images/nes-mario.jpg",
+          "description": "The legendary platformer that started it all. Guide Mario through the Mushroom Kingdom to rescue Princess Peach from Bowser.",
+          "year": 1985,
+          "players": "1-2"
         }
       ]
     },
@@ -27,7 +25,10 @@
         {
           "name": "Super Mario World",
           "rom": "roms/snes/marioworld.sfc",
-          "image": "assets/covers/snes-marioworld.jpg"
+          "image": "assets/images/snes-marioworld.jpg",
+          "description": "Mario's adventure on Dinosaur Land with Yoshi.",
+          "year": 1990,
+          "players": "1-2"
         }
       ]
     },
@@ -40,7 +41,10 @@
         {
           "name": "Pokemon FireRed",
           "rom": "roms/gba/pokemon-firered.gba",
-          "image": "assets/covers/gba-pokemon.jpg"
+          "image": "assets/images/gba-pokemon.jpg",
+          "description": "Return to the Kanto region in this enhanced remake.",
+          "year": 2004,
+          "players": "1"
         }
       ]
     },
@@ -53,7 +57,10 @@
         {
           "name": "Tekken 3",
           "rom": "roms/psx/tekken3.bin",
-          "image": "assets/covers/psx-tekken3.jpg"
+          "image": "assets/images/psx-tekken3.jpg",
+          "description": "The ultimate 3D fighting game.",
+          "year": 1998,
+          "players": "1-2"
         }
       ]
     },
@@ -66,7 +73,10 @@
         {
           "name": "Sonic The Hedgehog",
           "rom": "roms/genesis/sonic.bin",
-          "image": "assets/covers/genesis-sonic.jpg"
+          "image": "assets/images/genesis-sonic.jpg",
+          "description": "Speed through colorful zones at lightning pace.",
+          "year": 1991,
+          "players": "1"
         }
       ]
     }
