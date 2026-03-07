@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    overflow: hidden;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.controller-app {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.status-bar {
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.status {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.player-info {
+    margin-top: 0.5rem;
+    color: #10b981;
+    font-size: 1rem;
+}
+
+.controller-layout {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+.dpad {
+    position: relative;
+    width: 180px;
+    height: 180px;
+}
+
+.dpad-btn {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+.dpad-btn:active {
+    background: rgba(102, 126, 234, 0.5);
+    transform: scale(0.9);
+}
+
+.dpad-up {
+    top: 0;
+    left: 60px;
+    border-radius: 8px 8px 0 0;
+}
+
+.dpad-down {
+    bottom: 0;
+    left: 60px;
+    border-radius: 0 0 8px 8px;
+}
+
+.dpad-left {
+    left: 0;
+    top: 60px;
+    border-radius: 8px 0 0 8px;
+}
+
+.dpad-right {
+    right: 0;
+    top: 60px;
+    border-radius: 0 8px 8px 0;
+}
+
+.dpad-center {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 60px;
+    left: 60px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+}
+
+.action-buttons {
+    position: relative;
+    width: 180px;
+    height: 180px;
+}
+
+.action-btn {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+.action-btn:active {
+    transform: scale(0.85);
+}
+
+.btn-x {
+    top: 0;
+    left: 55px;
+    background: #fbbf24;
+}
+
+.btn-y {
+    left: 0;
+    top: 55px;
+    background: #10b981;
+}
+
+.btn-a {
+    right: 0;
+    top: 55px;
+    background: #ef4444;
+}
+
+.btn-b {
+    bottom: 0;
+    left: 55px;
+    background: #3b82f6;
+}
+
+.center-buttons {
+    display: flex;
+    gap: 2rem;
+}
+
+.util-btn {
+    padding: 0.8rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+.util-btn:active {
+    background: rgba(102, 126, 234, 0.5);
+    transform: scale(0.9);
+}
+
+.shoulder-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem 2rem;
+}
+
+.shoulder-btn {
+    padding: 1rem 3rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+.shoulder-btn:active {
+    background: rgba(102, 126, 234, 0.5);
+    transform: scale(0.9);
+}
