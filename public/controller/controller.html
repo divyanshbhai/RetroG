@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>RetroG Controller</title>
+    <link rel="stylesheet" href="/assets/css/controller.css">
+</head>
+<body>
+    <div class="controller-app">
+        <div class="status-bar">
+            <div id="status" class="status">Connecting...</div>
+            <div id="mode-indicator" class="mode-indicator">UI Mode</div>
+        </div>
+
+        <div class="mode-switcher">
+            <button id="ui-mode-btn" class="mode-btn active">UI Control</button>
+            <button id="game-mode-btn" class="mode-btn">Game Control</button>
+        </div>
+
+        <div id="ui-controller" class="controller-layout">
+            <div class="control-section">
+                <div class="dpad">
+                    <button class="dpad-btn dpad-up" data-ui="up">▲</button>
+                    <button class="dpad-btn dpad-down" data-ui="down">▼</button>
+                    <button class="dpad-btn dpad-left" data-ui="left">◀</button>
+                    <button class="dpad-btn dpad-right" data-ui="right">▶</button>
+                    <div class="dpad-center"></div>
+                </div>
+            </div>
+            <div class="center-buttons">
+                <button class="btn-action" data-ui="select">SELECT</button>
+                <button class="btn-action" data-ui="back">BACK</button>
+            </div>
+        </div>
+
+        <div id="game-controller" class="controller-layout hidden">
+            <div class="control-section">
+                <div class="dpad">
+                    <button class="dpad-btn dpad-up" data-button="up">▲</button>
+                    <button class="dpad-btn dpad-down" data-button="down">▼</button>
+                    <button class="dpad-btn dpad-left" data-button="left">◀</button>
+                    <button class="dpad-btn dpad-right" data-button="right">▶</button>
+                    <div class="dpad-center"></div>
+                </div>
+            </div>
+            <div class="center-buttons">
+                <button class="util-btn" data-button="select">SELECT</button>
+                <button class="util-btn" data-button="start">START</button>
+            </div>
+            <div class="control-section">
+                <div class="action-buttons">
+                    <button class="action-btn btn-x" data-button="x">X</button>
+                    <button class="action-btn btn-y" data-button="y">Y</button>
+                    <button class="action-btn btn-a" data-button="a">A</button>
+                    <button class="action-btn btn-b" data-button="b">B</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="shoulder-buttons">
+            <button class="shoulder-btn" data-button="l">L</button>
+            <button class="shoulder-btn" data-button="r">R</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+    <script src="/controller/controller.js"></script>
+</body>
+</html>

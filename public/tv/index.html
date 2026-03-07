@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetroG Console</title>
+    <link rel="stylesheet" href="/assets/css/tv.css">
+</head>
+<body>
+    <div id="app">
+        <div id="dashboard" class="dashboard">
+            <div class="header">
+                <h1 class="logo">RetroG</h1>
+                <div class="user-info">
+                    <span id="time"></span>
+                </div>
+            </div>
+            <div id="content" class="content"></div>
+            <div id="details-panel" class="details-panel">
+                <div class="details-content">
+                    <h2 id="game-title"></h2>
+                    <div id="game-meta" class="game-meta"></div>
+                    <p id="game-desc" class="game-desc"></p>
+                    <button id="play-btn" class="play-btn">▶ Play Game</button>
+                </div>
+            </div>
+        </div>
+        <div id="emulator-screen" class="emulator-screen hidden">
+            <div class="emulator-container">
+                <div id="game-canvas"></div>
+            </div>
+            <div class="emulator-sidebar">
+                <button id="exit-btn" class="exit-btn">✕ Exit</button>
+                <div class="qr-section">
+                    <h3>Connect Controller</h3>
+                    <div id="qr-code"></div>
+                    <p class="qr-hint">Scan with phone</p>
+                </div>
+                <div class="players-section">
+                    <h3>Players</h3>
+                    <div id="players-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emulatorjs@latest/data/loader.js"></script>
+    <script src="/tv/tv.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "retrog-console",
+  "version": "1.0.0",
+  "description": "Browser-based retro gaming console with mobile controllers",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
