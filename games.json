@@ -1,0 +1,74 @@
+{
+  "consoles": [
+    {
+      "id": "nes",
+      "name": "Nintendo Entertainment System",
+      "category": "Nintendo",
+      "core": "nes",
+      "games": [
+        {
+          "name": "Super Mario Bros",
+          "rom": "roms/nes/mario.nes",
+          "image": "assets/covers/nes-mario.jpg"
+        },
+        {
+          "name": "Contra",
+          "rom": "roms/nes/contra.nes",
+          "image": "assets/covers/nes-contra.jpg"
+        }
+      ]
+    },
+    {
+      "id": "snes",
+      "name": "Super Nintendo",
+      "category": "Nintendo",
+      "core": "snes",
+      "games": [
+        {
+          "name": "Super Mario World",
+          "rom": "roms/snes/marioworld.sfc",
+          "image": "assets/covers/snes-marioworld.jpg"
+        }
+      ]
+    },
+    {
+      "id": "gba",
+      "name": "Game Boy Advance",
+      "category": "Nintendo",
+      "core": "gba",
+      "games": [
+        {
+          "name": "Pokemon FireRed",
+          "rom": "roms/gba/pokemon-firered.gba",
+          "image": "assets/covers/gba-pokemon.jpg"
+        }
+      ]
+    },
+    {
+      "id": "psx",
+      "name": "PlayStation",
+      "category": "Sony",
+      "core": "psx",
+      "games": [
+        {
+          "name": "Tekken 3",
+          "rom": "roms/psx/tekken3.bin",
+          "image": "assets/covers/psx-tekken3.jpg"
+        }
+      ]
+    },
+    {
+      "id": "genesis",
+      "name": "Sega Genesis",
+      "category": "Sega",
+      "core": "segaMD",
+      "games": [
+        {
+          "name": "Sonic The Hedgehog",
+          "rom": "roms/genesis/sonic.bin",
+          "image": "assets/covers/genesis-sonic.jpg"
+        }
+      ]
+    }
+  ]
+}
