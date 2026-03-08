@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TV Host</title>
+<script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+<style>
+body{
+font-family:Arial;
+background:#111;
+color:white;
+text-align:center;
+}
+#log{
+margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>TV Host</h1>
+
+<p>Session ID:</p>
+<h2 id="session">...</h2>
+
+<p>Last Button:</p>
+<h2 id="button">None</h2>
+
+<div id="log"></div>
+
+<script>
+
+const peer = new Peer();
+
+peer.on("open",(id)=>{
+document.getElementById("session").innerText=id;
+});
+
+peer.on("connection",(conn)=>{
+
+log("Controller Connected");
+
+conn.on("data",(data)=>{
+document.getElementById("button").innerText=data.button;
+
+log("Button: "+data.button);
+});
+
+});
+
+function log(msg){
+document.getElementById("log").innerHTML+="<p>"+msg+"</p>";
+}
+
+</script>
+
+</body>
+</html>
