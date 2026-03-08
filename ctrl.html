@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Controller</title>
+<script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
+
+<style>
+
+body{
+font-family:Arial;
+text-align:center;
+background:#222;
+color:white;
+}
+
+button{
+width:120px;
+height:120px;
+font-size:30px;
+margin:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Mobile Controller</h1>
+
+<input id="session" placeholder="Enter Session ID"/>
+<button onclick="connect()">Connect</button>
+
+<br><br>
+
+<button onclick="send('UP')">UP</button><br>
+
+<button onclick="send('LEFT')">LEFT</button>
+<button onclick="send('RIGHT')">RIGHT</button><br>
+
+<button onclick="send('DOWN')">DOWN</button>
+
+<br><br>
+
+<button onclick="send('A')">A</button>
+<button onclick="send('B')">B</button>
+
+<script>
+
+let conn;
+
+const peer = new Peer();
+
+function connect(){
+
+const session = document.getElementById("session").value;
+
+conn = peer.connect(session);
+
+conn.on("open",()=>{
+alert("Connected to TV");
+});
+
+}
+
+function send(button){
+
+if(conn){
+conn.send({button:button});
+}
+
+}
+
+</script>
+
+</body>
+</html>
